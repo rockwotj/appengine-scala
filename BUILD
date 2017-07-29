@@ -25,3 +25,9 @@ scala_binary(
     "@io_bazel_rules_appengine//appengine:javax.servlet.api",
   ],
 )
+
+scala_test(
+    name = "app_tests",
+    srcs = glob(["src/test/scala/**/*.scala"]),
+    deps = [],
+)
