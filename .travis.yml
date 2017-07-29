@@ -37,14 +37,7 @@ script:
       --local_resources=400,2,1.0 \
       --worker_verbose \
       --strategy=Javac=worker \
-      --strategy=Closure=worker \
-      //examples/helloworld/closure/... \
-      //examples/helloworld/cpp/... \
-      //examples/helloworld/go/... \
-      //examples/helloworld/grpc_gateway/... \
-      //examples/helloworld/java/... \
-      //examples/wkt/... \
-      //tests/... \
+      //... \
       $FLAGS
 
 notifications:
