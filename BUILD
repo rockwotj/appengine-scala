@@ -6,7 +6,6 @@ appengine_war(
   jars = [":app_deploy.jar"],
   data = ["//webapp"],
   data_path = "/webapp",
-  visibility = ["//visibility:public"],
 )
 
 # We only need a java_library, but create a java_binary because we need a bundle
@@ -18,12 +17,20 @@ scala_binary(
   srcs = glob(["src/main/scala/**/*.scala"]),
   main_class = "does.not.exist",
   scalacopts = [
-    "-feature",  
+    "-feature",
+  ],
+  resources = [
+    ":resources",  
   ],
   deps = [
     "//third_party:com_google_appengine_appengine_api_1_0_sdk",
     "@io_bazel_rules_appengine//appengine:javax.servlet.api",
   ],
+)
+
+filegroup(
+  name = "resources",
+  srcs = glob(["src/main/resources/**"]),
 )
 
 scala_test(

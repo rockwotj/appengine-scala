@@ -4,10 +4,18 @@
 <web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
 
   <servlet>
+    <servlet-name>favicon-servlet</servlet-name>
+    <servlet-class>com.tylerrockwood.example.FaviconServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>favicon-servlet</servlet-name>
+    <url-pattern>/favicon.ico</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
     <servlet-name>my-servlet</servlet-name>
     <servlet-class>com.tylerrockwood.example.MyAppServlet</servlet-class>
   </servlet>
-
   <servlet-mapping>
     <servlet-name>my-servlet</servlet-name>
     <url-pattern>/*</url-pattern>

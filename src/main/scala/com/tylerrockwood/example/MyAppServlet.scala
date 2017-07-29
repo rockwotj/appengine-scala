@@ -16,6 +16,15 @@ class MyAppServlet extends HttpServlet with Logging {
     val count = MemcacheService.increment(COUNTER_KEY)
     logger.info(s"Request number $count happened")
     response.setContentType("text/plain")
-    response.write(s"You are number: $count")
+    response.write(s"You are number: $count\n")
+  }
+}
+
+class FaviconServlet extends HttpServlet with Logging {
+
+  override def handleGet(request: HttpRequest, response: HttpResponse): Unit = {
+    response.setContentType("image/x-icon")
+    val favicon = getClass.getClassLoader.getResourceAsStream("favicon.ico")
+    response.write(favicon)
   }
 }

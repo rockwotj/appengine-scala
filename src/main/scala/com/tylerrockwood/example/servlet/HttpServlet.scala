@@ -1,6 +1,9 @@
 package com.tylerrockwood.example.servlet
 
+import java.io.InputStream
 import javax.servlet.http.{HttpServlet => JavaHttpServlet, HttpServletRequest => JavaServletRequest, HttpServletResponse => JavaServletResponse}
+
+import com.google.appengine.repackaged.com.google.api.client.util.IOUtils
 
 import scala.collection.JavaConverters._
 import scala.io.Source
@@ -43,6 +46,9 @@ class HttpResponse(javaServletResponse: JavaServletResponse) {
   }
   def write(body: String): Unit = {
     javaServletResponse.getWriter.write(body)
+  }
+  def write(body: InputStream): Unit = {
+    IOUtils.copy(body, javaServletResponse.getOutputStream)
   }
 }
 

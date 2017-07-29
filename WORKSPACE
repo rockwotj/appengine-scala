@@ -1,7 +1,7 @@
 git_repository(
   name = "io_bazel_rules_appengine",
   remote = "https://github.com/bazelbuild/rules_appengine.git",
-  tag = "0.0.4",
+  commit = "14d860985c2a764fdb6a6072d5450d8360c4ce5b",
 )
 git_repository(
   name = "io_bazel_rules_scala",
