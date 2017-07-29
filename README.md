@@ -1,5 +1,7 @@
 # Scala AppEngine using Bazel
 
+[![Build Status](https://travis-ci.org/rockwotj/appengine-scala.svg?branch=master)](https://travis-ci.org/rockwotj/appengine-scala)
+
 This is an example of using Scala in [Google App Engine](https://cloud.google.com/appengine) while building with [Bazel](https://bazel.build).
 
 To run it, first [install bazel](https://bazel.build/versions/master/docs/install.html) and run `bazel build :backend` then `./bazel-bin/backend --port=12345` to run the server.
